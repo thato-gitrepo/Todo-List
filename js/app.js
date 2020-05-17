@@ -23,8 +23,11 @@ filterOption.addEventListener('click', filterTodo);
 function addTodo(event) {
     event.preventDefault();
 
-    //Add the new item to the todo list
-    if (todoInput.value === '' || todoInput.value == null) {
+    //assign user input to listItem variable
+    let listItem = todoInput.value;
+
+    //Pass todo item to add if available
+    if(listItem.trim() === '' || listItem.trim() == null) {
         validateInputForm();
     }
     else {
@@ -80,7 +83,7 @@ function addTodoItem(todo) {
 function validateInputForm() {
     let todoItem = document.forms['listForm']['todoItem'].value;
 
-    if (todoItem === '' || x == null) {
+    if (todoItem === '' || todoItem == null) {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
